@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>odcs-java-sdk — ODCS Java SDK | Data Spec Labs</title>
+  <meta name="title" content="odcs-java-sdk — ODCS Java SDK | Data Spec Labs">
+  <meta name="description" content="odcs-java-sdk (Maven: odcs-core) — Java 17+ SDK for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts (YAML/JSON) with ODCSParser, ODCSWriter, ODCSSpecValidator, and DataContractBuilder.">
+  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, Open Data Contract Standard, ODCS, ODCSParser, ODCSWriter, ODCSSpecValidator, DataContractBuilder, Java 17, Maven, data contracts, Data Spec Labs">
+  <meta name="author" content="Data Spec Labs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://data-spec-labs.github.io/odcs-java-sdk/">
+
+  <link rel="icon" href="../logo/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../logo/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../logo/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../logo/favicon/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://data-spec-labs.github.io/odcs-java-sdk/">
+  <meta property="og:title" content="odcs-java-sdk — ODCS Java SDK">
+  <meta property="og:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Artifact: io.github.data-spec-labs:odcs-core.">
+  <meta property="og:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://data-spec-labs.github.io/odcs-java-sdk/">
+  <meta name="twitter:title" content="odcs-java-sdk — ODCS Java SDK">
+  <meta name="twitter:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Artifact: odcs-core.">
+  <meta name="twitter:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "ODCS Java SDK",
+        "alternateName": ["odcs-java-sdk", "odcs-core"],
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "programmingLanguage": "Java",
+        "softwareVersion": "0.1.0",
+        "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
+        "downloadUrl": "https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core",
+        "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
+        "description": "Java SDK for the Open Data Contract Standard (ODCS). Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.",
+        "author": {
+          "@type": "Organization",
+          "name": "Data Spec Labs",
+          "url": "https://data-spec-labs.github.io/",
+          "logo": "https://data-spec-labs.github.io/logo/dsl_logo.png"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "odcs-java-sdk",
+        "alternateName": "odcs-core",
+        "description": "Java SDK to parse, write, validate, and build Open Data Contract Standard (ODCS) contracts.",
+        "programmingLanguage": "Java",
+        "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
+        "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
+        "version": "0.1.0"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Data Spec Labs",
+            "item": "https://data-spec-labs.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "ODCS Java SDK",
+            "item": "https://data-spec-labs.github.io/odcs-java-sdk/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #102142;
+      --navy-soft: #1a3358;
+      --ink: #0c1628;
+      --muted: #5a6a7e;
+      --line: #d8dee8;
+      --code-bg: #0c1628;
+      --page-from: #f4f6fa;
+      --page-to: #e8eef6;
+      --radius: 2px;
+      --font: "DM Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 33, 66, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--page-from) 0%, var(--page-to) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { color: var(--navy-soft); }
+
+    .wrap {
+      width: min(100% - 2.5rem, 40rem);
+      margin-inline: auto;
+    }
+
+    .site-header { padding: 1.25rem 0; }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand:hover { color: var(--ink); }
+
+    .brand img {
+      height: 2rem;
+      width: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-link:hover { color: var(--navy); }
+
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      animation: rise 0.7s ease both;
+    }
+
+    .crumb {
+      margin: 0 0 1.25rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .crumb a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .crumb a:hover { color: var(--navy); }
+
+    .hero h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.75rem, 4.5vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .artifact {
+      margin: 0 0 1rem;
+      font-family: var(--mono);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .hero-lead {
+      margin: 0 0 1.75rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.1rem;
+      font-family: var(--font);
+      font-size: 0.9375rem;
+      font-weight: 550;
+      text-decoration: none;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      border-color: var(--navy-soft);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(16, 33, 66, 0.06);
+      color: var(--navy);
+    }
+
+    main { padding-bottom: 3.5rem; }
+
+    section {
+      padding: 2.25rem 0;
+      border-top: 1px solid var(--line);
+      animation: rise 0.7s ease both;
+      animation-delay: 0.12s;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.18s; }
+    section:nth-of-type(3) { animation-delay: 0.24s; }
+    section:nth-of-type(4) { animation-delay: 0.3s; }
+    section:nth-of-type(5) { animation-delay: 0.36s; }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .section-copy {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-size: 0.875em;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-list li {
+      display: grid;
+      gap: 0.15rem 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (min-width: 540px) {
+      .feature-list li {
+        grid-template-columns: 7.5rem 1fr;
+        align-items: baseline;
+      }
+    }
+
+    .feature-list strong {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .feature-list .api {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--navy);
+    }
+
+    .feature-list p {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .version {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      color: var(--navy);
+    }
+
+    .code-panel {
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--code-bg);
+      margin-bottom: 1rem;
+    }
+
+    .code-panel:last-child { margin-bottom: 0; }
+
+    .code-panel-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .code-panel-bar span {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .copy-btn {
+      font-family: var(--font);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      padding: 0.25rem 0.55rem;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .code-panel pre {
+      margin: 0;
+      padding: 1rem 0.95rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: #e8eef6;
+    }
+
+    .code-panel code { font-family: inherit; }
+
+    .support-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .support-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .support-list strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 0 2.5rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .site-footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand img {
+      height: 1.15rem;
+      width: auto;
+      opacity: 0.85;
+    }
+
+    .site-footer nav {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .site-footer a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .site-footer a:hover { color: var(--navy); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(0.6rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <img src="../logo/dsl_logo.png" alt="Data Spec Labs" width="120" height="32">
+        <span class="brand-name">Data Spec Labs</span>
+      </a>
+      <a class="nav-link" href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="sdk-title">
+        <p class="crumb"><a href="../">Home</a> / ODCS Java SDK</p>
+        <h1 id="sdk-title">ODCS Java SDK</h1>
+        <p class="artifact">odcs-core · v0.1.0 · Java 17+</p>
+        <p class="hero-lead">
+          Java SDK for the
+          <a href="https://bitol-io.github.io/open-data-contract-standard/" target="_blank" rel="noopener noreferrer">Open Data Contract Standard (ODCS)</a>
+          — machine-readable agreements between data producers and consumers.
+          Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+          <a class="btn btn-ghost" href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven Central</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading">Features</h2>
+        <ul class="feature-list">
+          <li>
+            <div>
+              <strong>Typed models</strong>
+              <div class="api">model.v3.*</div>
+            </div>
+            <p>Immutable Jackson-annotated records for the ODCS v3.x family.</p>
+          </li>
+          <li>
+            <div>
+              <strong>Parse</strong>
+              <div class="api">ODCSParser</div>
+            </div>
+            <p>YAML or JSON → <span class="mono">DataContract</span>.</p>
+          </li>
+          <li>
+            <div>
+              <strong>Write</strong>
+              <div class="api">ODCSWriter</div>
+            </div>
+            <p><span class="mono">DataContract</span> → YAML / JSON (string or file).</p>
+          </li>
+          <li>
+            <div>
+              <strong>Validate</strong>
+              <div class="api">ODCSSpecValidator</div>
+            </div>
+            <p>Raw document vs official Bitol JSON Schemas → <span class="mono">SpecValidationReport</span>.</p>
+          </li>
+          <li>
+            <div>
+              <strong>Build</strong>
+              <div class="api">DataContractBuilder</div>
+            </div>
+            <p>Fluent construction of contracts in Java.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="install-heading">
+        <h2 id="install-heading">Installation</h2>
+        <p class="section-copy">
+          Published as <span class="mono">io.github.data-spec-labs:odcs-core</span>
+          (project: <strong>odcs-java-sdk</strong>). Requires Java 17+.
+        </p>
+        <p class="version">Current version: 0.1.0</p>
+
+        <div class="code-panel">
+          <div class="code-panel-bar">
+            <span>Maven · pom.xml</span>
+            <button type="button" class="copy-btn" id="copy-maven" onclick="copyMaven()">Copy</button>
+          </div>
+          <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
+  &lt;artifactId&gt;odcs-core&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+        </div>
+
+        <div class="code-panel">
+          <div class="code-panel-bar">
+            <span>Gradle · Kotlin DSL</span>
+            <button type="button" class="copy-btn" id="copy-gradle" onclick="copyGradle()">Copy</button>
+          </div>
+          <pre><code>implementation("io.github.data-spec-labs:odcs-core:0.1.0")</code></pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="versions-heading">
+        <h2 id="versions-heading">ODCS version support</h2>
+        <ul class="support-list">
+          <li>
+            <strong>Typed parse / write / builder</strong>
+            ODCS <strong>v3.x</strong> (<span class="mono">apiVersion</span> starting with <span class="mono">v3.</span>) — one model family covering v3.0.0–v3.1.0.
+          </li>
+          <li>
+            <strong>JSON Schema validation</strong>
+            <strong>v3.1.0</strong>, <strong>v3.0.x</strong>, and legacy <strong>v2.2.x</strong> (schema-only; no <span class="mono">model.v2</span> types yet).
+          </li>
+          <li>
+            <strong>Default for new contracts</strong>
+            <span class="mono">apiVersion: v3.1.0</span>
+          </li>
+        </ul>
+        <p class="section-copy" style="margin-top: 1.25rem;">
+          Official standard:
+          <a href="https://bitol-io.github.io/open-data-contract-standard/v3.1.0/" target="_blank" rel="noopener noreferrer">ODCS v3.1.0</a>.
+          Full docs and examples:
+          <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub README</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="more-heading">
+        <h2 id="more-heading">Related tools</h2>
+        <p class="section-copy">
+          Prefer a browser? Try the
+          <a href="https://odcs-validator.com/" target="_blank" rel="noopener noreferrer">ODCS Validator</a>
+          web tool, or see all projects on
+          <a href="../">Data Spec Labs</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-brand">
+        <img src="../logo/dsl_logo.png" alt="" width="80" height="22">
+        <span>&copy; Data Spec Labs · Apache 2.0</span>
+      </div>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    function copyText(text, btnId) {
+      const btn = document.getElementById(btnId);
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      }).catch(() => {
+        btn.textContent = 'Failed';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      });
+    }
+
+    function copyMaven() {
+      copyText(
+        `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`,
+        'copy-maven'
+      );
+    }
+
+    function copyGradle() {
+      copyText(
+        'implementation("io.github.data-spec-labs:odcs-core:0.1.0")',
+        'copy-gradle'
+      );
+    }
+  </script>
+</body>
+</html>

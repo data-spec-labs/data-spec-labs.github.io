@@ -1,308 +1,596 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary Meta Tags -->
-  <title>Data Spec Labs | Developer-First Tools for Open Data Specifications</title>
-  <meta name="title" content="Data Spec Labs | Developer-First Tools for Open Data Specifications">
-  <meta name="description" content="Developer-first tools, SDKs, and online validators for Open Data Specifications including ODPS (Open Data Product Specification) and ODCS (Open Data Contract Standard).">
-  <meta name="keywords" content="Data Spec Labs, ODCS, ODPS, Open Data Contract Standard, Open Data Product Specification, Data Governance, Data Contracts, Java SDK, Data Quality, Schema Validation">
+  <title>ODCS Java SDK | Data Spec Labs</title>
+  <meta name="title" content="ODCS Java SDK | Data Spec Labs">
+  <meta name="description" content="ODCS Java SDK (odcs-java-sdk / odcs-core) — parse, write, validate, and build Open Data Contract Standard (ODCS) contracts in Java (YAML or JSON). Also: ODCS and ODPS online validators.">
+  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, Open Data Contract Standard, ODCS, Java SDK, Maven, data contracts, ODCSParser, Data Spec Labs, ODCS validator, ODPS validator">
   <meta name="author" content="Data Spec Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://data-spec-labs.github.io/">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="icon" href="logo/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="logo/favicon/apple-touch-icon.png">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data-spec-labs.github.io/">
-  <meta property="og:title" content="Data Spec Labs | Developer-First Tools for Open Data Specifications">
-  <meta property="og:description" content="Developer-first tools, SDKs, and validators for Open Data Specifications (ODPS & ODCS). Build reliable, schema-driven data ecosystems.">
-  <meta property="og:image" content="https://data-spec-labs.github.io/logo.png">
+  <meta property="og:title" content="ODCS Java SDK | Data Spec Labs">
+  <meta property="og:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Install odcs-core from Maven Central.">
+  <meta property="og:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
-  <!-- Twitter Card -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://data-spec-labs.github.io/">
-  <meta property="twitter:title" content="Data Spec Labs | Developer-First Tools for Open Data Specifications">
-  <meta property="twitter:description" content="Developer-first tools, SDKs, and validators for Open Data Specifications (ODPS & ODCS).">
-  <meta property="twitter:image" content="https://data-spec-labs.github.io/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://data-spec-labs.github.io/">
+  <meta name="twitter:title" content="ODCS Java SDK | Data Spec Labs">
+  <meta name="twitter:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Install odcs-core from Maven Central.">
+  <meta name="twitter:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0fdf4',
-              500: '#16a34a',
-              600: '#15803d',
-              700: '#166534',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Data Spec Labs",
-    "url": "https://data-spec-labs.github.io/",
-    "logo": "https://data-spec-labs.github.io/logo.png",
-    "sameAs": [
-      "https://github.com/data-spec-labs"
-    ],
-    "description": "Developer-first tools and validators for Open Data Specifications including ODPS and ODCS."
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Data Spec Labs",
+        "url": "https://data-spec-labs.github.io/",
+        "logo": "https://data-spec-labs.github.io/logo/dsl_logo.png",
+        "sameAs": ["https://github.com/data-spec-labs"],
+        "description": "Developer tools and SDKs for Open Data Specifications including ODCS and ODPS."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "ODCS Java SDK",
+        "alternateName": ["odcs-java-sdk", "odcs-core"],
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "programmingLanguage": "Java",
+        "softwareVersion": "0.1.0",
+        "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
+        "downloadUrl": "https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core",
+        "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
+        "description": "Java SDK for the Open Data Contract Standard (ODCS). Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.",
+        "author": {
+          "@type": "Organization",
+          "name": "Data Spec Labs",
+          "url": "https://data-spec-labs.github.io/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "odcs-java-sdk",
+        "alternateName": "odcs-core",
+        "programmingLanguage": "Java",
+        "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
+        "url": "https://data-spec-labs.github.io/odcs-java-sdk/"
+      }
+    ]
   }
   </script>
 
   <style>
-    /* Smooth transitions for theme toggle */
+    :root {
+      --navy: #102142;
+      --navy-soft: #1a3358;
+      --ink: #0c1628;
+      --muted: #5a6a7e;
+      --line: #d8dee8;
+      --surface: #ffffff;
+      --code-bg: #0c1628;
+      --page-from: #f4f6fa;
+      --page-to: #e8eef6;
+      --accent: #102142;
+      --radius: 2px;
+      --font: "DM Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --max: 40rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      transition: background-color 0.2s ease, color 0.2s ease;
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 33, 66, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--page-from) 0%, var(--page-to) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { color: var(--navy-soft); }
+
+    .wrap {
+      width: min(100% - 2.5rem, 44rem);
+      margin-inline: auto;
+    }
+
+    /* Header */
+    .site-header {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand:hover { color: var(--ink); }
+
+    .brand img {
+      height: 2rem;
+      width: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-link:hover { color: var(--navy); }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      animation: rise 0.7s ease both;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .hero-lead {
+      margin: 0 0 1.75rem;
+      max-width: 32rem;
+      font-size: 1.125rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.1rem;
+      font-family: var(--font);
+      font-size: 0.9375rem;
+      font-weight: 550;
+      text-decoration: none;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      border-color: var(--navy-soft);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(16, 33, 66, 0.06);
+      color: var(--navy);
+    }
+
+    /* Sections */
+    main { padding-bottom: 4rem; }
+
+    section {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--line);
+      animation: rise 0.7s ease both;
+      animation-delay: 0.12s;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.22s; }
+
+    .section-label {
+      margin: 0 0 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.375rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .section-copy {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: baseline;
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .meta-row a { font-weight: 500; text-decoration: none; }
+    .meta-row a:hover { text-decoration: underline; }
+
+    .version {
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      color: var(--navy);
+    }
+
+    /* Code panel */
+    .code-panel {
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--code-bg);
+    }
+
+    .code-panel-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .code-panel-bar span {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .copy-btn {
+      font-family: var(--font);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      padding: 0.25rem 0.55rem;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .code-panel pre {
+      margin: 0;
+      padding: 1rem 0.95rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: #e8eef6;
+    }
+
+    .code-panel code { font-family: inherit; }
+
+    /* Validator list */
+    .tool-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .tool-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tool-list h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .tool-list p {
+      margin: 0.2rem 0 0;
+      font-size: 0.875rem;
+      color: var(--muted);
+      max-width: 22rem;
+    }
+
+    .tool-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .tool-links a { text-decoration: none; }
+    .tool-links a:hover { text-decoration: underline; }
+
+    .capability-list {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      display: grid;
+      gap: 0.65rem 1.25rem;
+    }
+
+    @media (min-width: 540px) {
+      .capability-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .capability-list li {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      padding-left: 0.85rem;
+      border-left: 2px solid var(--navy);
+    }
+
+    .capability-list strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 0 2.5rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .site-footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-brand img {
+      height: 1.15rem;
+      width: auto;
+      opacity: 0.85;
+    }
+
+    .site-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+
+    .site-footer a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .site-footer a:hover { color: var(--navy); }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(0.6rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
-
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 min-h-screen flex flex-col font-sans antialiased">
-
-  <!-- Header / Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Logo & Brand Name -->
-      <a href="https://data-spec-labs.github.io/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1">
-        <img src="logo.png" alt="Data Spec Labs Logo" class="w-9 h-9 rounded-lg object-cover border border-gray-200 dark:border-gray-700 shadow-sm">
-        <span class="font-bold text-lg tracking-tight group-hover:text-brand-600 dark:group-hover:text-brand-500 transition-colors">
-          Data Spec Labs
-        </span>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="https://data-spec-labs.github.io/">
+        <img src="logo/dsl_logo.png" alt="Data Spec Labs" width="120" height="32">
+        <span class="brand-name">Data Spec Labs</span>
       </a>
-
-      <!-- Right Nav Actions -->
-      <div class="flex items-center gap-4">
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-lg text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
-          <!-- Sun Icon (Light) -->
-          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path>
-          </svg>
-          <!-- Moon Icon (Dark) -->
-          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-        </button>
-
-        <!-- GitHub Repository Link -->
-        <a href="https://github.com/data-spec-labs" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          <span>GitHub</span>
-        </a>
-      </div>
+      <a class="nav-link" href="https://github.com/data-spec-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </header>
 
-  <!-- Main Content Area -->
-  <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    
-    <!-- Hero Section -->
-    <section class="text-center md:text-left mb-16 border-b border-gray-200 dark:border-gray-800 pb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
-        <span>🚀 Open Source Data Tooling</span>
-      </div>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
-        Data Spec Labs
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-        Developer-first tools, SDKs, and online validators for Open Data Specifications.
-      </p>
-    </section>
+  <main>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="brand-heading">
+        <h1 id="brand-heading">Data Spec Labs</h1>
+        <p class="hero-lead">
+          Open-source tooling for Open Data Specifications — led by the ODCS Java SDK to parse, write, validate, and build data contracts on the JVM.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="odcs-java-sdk/">ODCS Java SDK</a>
+          <a class="btn btn-ghost" href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </section>
 
-    <!-- Active Tools Section -->
-    <section id="tools" aria-labelledby="active-tools-heading" class="mb-12">
-      <h2 id="active-tools-heading" class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2">
-        <span>🛠️</span> Active Tools & Specifications
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        
-        <!-- ODPS Validator Card -->
-        <article class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                ODPS Validator
-              </h3>
-              <span class="text-xs font-mono px-2.5 py-1 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded-md border border-blue-200 dark:border-blue-800">
-                Web Tool
-              </span>
-            </div>
-            <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-              Online validator for the <strong>Open Data Product Specification (ODPS)</strong>. Easily validate product schemas and specs against official standards.
-            </p>
-          </div>
-          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
-            <a href="https://odps-validator.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm">
-              <span>Live Tool</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/data-spec-labs/odps-online-validator" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg transition-colors">
-              <span>Repository</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- ODCS Validator Card -->
-        <article class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                ODCS Validator
-              </h3>
-              <span class="text-xs font-mono px-2.5 py-1 bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-md border border-purple-200 dark:border-purple-800">
-                Web Tool
-              </span>
-            </div>
-            <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-              Online validator for the <strong>Open Data Contract Standard (ODCS)</strong>. Verify data contract compliance and quality requirements instantly.
-            </p>
-          </div>
-          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
-            <a href="https://odcs-validator.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm">
-              <span>Live Tool</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/data-spec-labs/odcs-online-validator" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg transition-colors">
-              <span>Repository</span>
-            </a>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- SDK Section -->
-      <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-          <div>
-            <div class="flex items-center gap-3 mb-1">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">ODCS Java SDK</h3>
-              <span class="text-xs font-mono px-2.5 py-0.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 rounded-full font-semibold">v0.1.0</span>
-            </div>
-            <p class="text-gray-600 dark:text-gray-400 text-sm">
-              Java SDK for integrating Open Data Contract Standard (ODCS) into your backend pipelines.
-            </p>
-          </div>
-          <div class="flex items-center gap-3">
-            <a href="https://central.sonatype.com/artifact/io.github.data-spec-labs/odcs-java-sdk/overview" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-medium rounded-lg transition-colors">
-              <span>Maven</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-medium rounded-lg transition-colors">
-              <span>Repository</span>
-            </a>
-          </div>
+      <section id="odcs-java-sdk" aria-labelledby="sdk-heading">
+        <p class="section-label">Featured</p>
+        <h2 id="sdk-heading">ODCS Java SDK</h2>
+        <p class="section-copy">
+          <strong>odcs-java-sdk</strong> (<code style="font-family:var(--mono);font-size:0.875em">odcs-core</code>) is a Java 17+ library for the
+          <a href="https://bitol-io.github.io/open-data-contract-standard/" target="_blank" rel="noopener noreferrer">Open Data Contract Standard (ODCS)</a>.
+          Work with machine-readable agreements between data producers and consumers — YAML or JSON — on the JVM.
+        </p>
+        <ul class="capability-list">
+          <li><strong>Parse</strong> — YAML/JSON → typed <code style="font-family:var(--mono);font-size:0.85em">DataContract</code></li>
+          <li><strong>Write</strong> — contracts back to YAML or JSON</li>
+          <li><strong>Validate</strong> — against official Bitol JSON Schemas</li>
+          <li><strong>Build</strong> — fluent <code style="font-family:var(--mono);font-size:0.85em">DataContractBuilder</code> API</li>
+        </ul>
+        <div class="meta-row">
+          <span class="version">v0.1.0 · Java 17+</span>
+          <a href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven Central</a>
+          <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="odcs-java-sdk/">Details</a>
         </div>
 
-        <!-- Copy Dependency Code Block -->
-        <div class="mt-4">
-          <div class="flex items-center justify-between bg-gray-800 dark:bg-gray-950 px-4 py-2 rounded-t-lg border-b border-gray-700">
-            <span class="text-xs font-mono text-gray-400">pom.xml (Maven Dependency)</span>
-            <button id="copy-btn" onclick="copyDependency()" class="text-xs text-gray-300 hover:text-white bg-gray-700 hover:bg-gray-600 px-2.5 py-1 rounded transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-500">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-              <span id="copy-btn-text">Copy XML</span>
-            </button>
+        <div class="code-panel">
+          <div class="code-panel-bar">
+            <span>pom.xml</span>
+            <button type="button" class="copy-btn" id="copy-btn" onclick="copyDependency()">Copy</button>
           </div>
-          <pre class="bg-gray-900 dark:bg-black text-gray-100 p-4 rounded-b-lg text-xs sm:text-sm font-mono overflow-x-auto leading-relaxed"><code>&lt;dependency&gt;
-    &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
-    &lt;artifactId&gt;odcs-java-sdk&lt;/artifactId&gt;
-    &lt;version&gt;0.1.0&lt;/version&gt;
+          <pre><code id="maven-dep">&lt;dependency&gt;
+  &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
+  &lt;artifactId&gt;odcs-core&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section id="validators" aria-labelledby="validators-heading">
+        <p class="section-label">Also available</p>
+        <h2 id="validators-heading">Online validators</h2>
+        <p class="section-copy">
+          Browser tools for checking Open Data Product and Contract specs.
+        </p>
+        <ul class="tool-list">
+          <li>
+            <div>
+              <h3>ODCS Validator</h3>
+              <p>Validate Open Data Contract Standard documents online.</p>
+            </div>
+            <div class="tool-links">
+              <a href="https://odcs-validator.com/" target="_blank" rel="noopener noreferrer">Live</a>
+              <a href="https://github.com/data-spec-labs/odcs-online-validator" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>ODPS Validator</h3>
+              <p>Validate Open Data Product Specification documents online.</p>
+            </div>
+            <div class="tool-links">
+              <a href="https://odps-validator.com/" target="_blank" rel="noopener noreferrer">Live</a>
+              <a href="https://github.com/data-spec-labs/odps-online-validator" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8 transition-colors">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
-      <div class="flex items-center gap-2">
-        <img src="logo.png" alt="Data Spec Labs" class="w-5 h-5 rounded object-cover">
-        <span>&copy; Data Spec Labs. Open Source Community.</span>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-brand">
+        <img src="logo/dsl_logo.png" alt="" width="80" height="22">
+        <span>&copy; Data Spec Labs</span>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/data-spec-labs" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
-          GitHub Organization
-        </a>
-      </div>
+      <nav aria-label="Footer">
+        <a href="odcs-java-sdk/">ODCS Java SDK</a>
+        <a href="https://github.com/data-spec-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Inline Script for Copy & Dark Mode Toggle -->
   <script>
-    // Theme Toggle Functionality
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-    // System preference or current state check
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      lightIcon.classList.remove('hidden');
-    } else {
-      document.documentElement.classList.remove('dark');
-      darkIcon.classList.remove('hidden');
-    }
-
-    themeToggleBtn.addEventListener('click', function() {
-      lightIcon.classList.toggle('hidden');
-      darkIcon.classList.toggle('hidden');
-
-      if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-        }
-      } else {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-        }
-      }
-    });
-
-    // Copy Dependency Snippet Functionality
     function copyDependency() {
-      const dependencyXml = `<dependency>\n    <groupId>io.github.data-spec-labs</groupId>\n    <artifactId>odcs-java-sdk</artifactId>\n    <version>0.1.0</version>\n</dependency>`;
-      const btnText = document.getElementById('copy-btn-text');
-
-      navigator.clipboard.writeText(dependencyXml).then(() => {
-        btnText.textContent = 'Copied!';
-        setTimeout(() => {
-          btnText.textContent = 'Copy XML';
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy code block: ', err);
+      const xml = `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`;
+      const btn = document.getElementById('copy-btn');
+      navigator.clipboard.writeText(xml).then(() => {
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      }).catch(() => {
+        btn.textContent = 'Failed';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
       });
     }
   </script>
-
 </body>
 </html>
