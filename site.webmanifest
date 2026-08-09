@@ -1,0 +1,21 @@
+{
+  "name": "Data Spec Labs",
+  "short_name": "DSL",
+  "description": "Developer tools and SDKs for Open Data Specifications including ODCS and ODPS.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f6fa",
+  "theme_color": "#102142",
+  "icons": [
+    {
+      "src": "/logo/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

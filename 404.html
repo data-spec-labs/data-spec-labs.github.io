@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Data Spec Labs</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://data-spec-labs.github.io/404.html">
+  <link rel="icon" href="/logo/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/logo/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #102142;
+      --navy-soft: #1a3358;
+      --ink: #0c1628;
+      --muted: #5a6a7e;
+      --line: #d8dee8;
+      --page-from: #f4f6fa;
+      --page-to: #e8eef6;
+      --radius: 2px;
+      --font: "DM Sans", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 33, 66, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--page-from) 0%, var(--page-to) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { color: var(--navy-soft); }
+
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(100% - 2.5rem, 40rem);
+      margin-inline: auto;
+    }
+
+    .site-header { padding: 1.25rem 0; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand img {
+      height: 2rem;
+      width: auto;
+      display: block;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    main {
+      flex: 1;
+      padding: 4.5rem 0 3rem;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .lead {
+      margin: 0 0 1.75rem;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.1rem;
+      font-family: var(--font);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-soft);
+      border-color: var(--navy-soft);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(16, 33, 66, 0.06);
+      color: var(--navy);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 0 2.5rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/logo/dsl_logo.png" alt="Data Spec Labs" width="120" height="32">
+        <span class="brand-name">Data Spec Labs</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Page not found</h1>
+      <p class="lead">
+        That URL does not exist on this site. Head home or open the ODCS Java SDK page.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-ghost" href="/odcs-java-sdk/">ODCS Java SDK</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; Data Spec Labs</span>
+    </div>
+  </footer>
+</body>
+</html>

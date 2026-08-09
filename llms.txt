@@ -1,0 +1,13 @@
+# Data Spec Labs
+
+> Open-source tooling for Open Data Specifications. Home of the ODCS Java SDK (odcs-core).
+
+## Products
+
+- [ODCS Java SDK](https://data-spec-labs.github.io/odcs-java-sdk/): Java library to parse, write, validate, and build ODCS contracts
+- [Home](https://data-spec-labs.github.io/): Data Spec Labs overview and validators
+
+## External
+
+- [GitHub: odcs-java-sdk](https://github.com/data-spec-labs/odcs-java-sdk)
+- [Maven: odcs-core](https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core)

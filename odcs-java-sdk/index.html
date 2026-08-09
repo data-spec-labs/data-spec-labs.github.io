@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>odcs-java-sdk — ODCS Java SDK | Data Spec Labs</title>
-  <meta name="title" content="odcs-java-sdk — ODCS Java SDK | Data Spec Labs">
-  <meta name="description" content="odcs-java-sdk (Maven: odcs-core) — Java 17+ SDK for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts (YAML/JSON) with ODCSParser, ODCSWriter, ODCSSpecValidator, and DataContractBuilder.">
-  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, Open Data Contract Standard, ODCS, ODCSParser, ODCSWriter, ODCSSpecValidator, DataContractBuilder, Java 17, Maven, data contracts, Data Spec Labs">
+  <title>ODCS Java SDK — Java Library for Open Data Contracts | Data Spec Labs</title>
+  <meta name="title" content="ODCS Java SDK — Java Library for Open Data Contracts | Data Spec Labs">
+  <meta name="description" content="ODCS Java SDK (odcs-core) is a Java library for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts (YAML/JSON) with ODCSParser, ODCSWriter, ODCSSpecValidator, and DataContractBuilder.">
+  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, ODCS Java library, ODCS Java Library, Open Data Contract Standard, ODCS, ODCSParser, ODCSWriter, ODCSSpecValidator, DataContractBuilder, Java 17, Maven, data contracts, Data Spec Labs">
   <meta name="author" content="Data Spec Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://data-spec-labs.github.io/odcs-java-sdk/">
@@ -16,17 +16,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../logo/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../logo/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" href="../logo/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data-spec-labs.github.io/odcs-java-sdk/">
-  <meta property="og:title" content="odcs-java-sdk — ODCS Java SDK">
-  <meta property="og:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Artifact: io.github.data-spec-labs:odcs-core.">
+  <meta property="og:title" content="ODCS Java SDK — Java Library for Open Data Contracts">
+  <meta property="og:description" content="ODCS Java SDK (odcs-core) is a Java library for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts on the JVM.">
   <meta property="og:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="https://data-spec-labs.github.io/odcs-java-sdk/">
-  <meta name="twitter:title" content="odcs-java-sdk — ODCS Java SDK">
-  <meta name="twitter:description" content="Parse, write, validate, and build ODCS data contracts on the JVM. Artifact: odcs-core.">
+  <meta name="twitter:title" content="ODCS Java SDK — Java Library for Open Data Contracts">
+  <meta name="twitter:description" content="ODCS Java SDK (odcs-core) is a Java library for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts on the JVM.">
   <meta name="twitter:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +41,7 @@
       {
         "@type": "SoftwareApplication",
         "name": "ODCS Java SDK",
-        "alternateName": ["odcs-java-sdk", "odcs-core"],
+        "alternateName": ["odcs-java-sdk", "odcs-core", "ODCS Java library", "ODCS Java Library"],
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Cross-platform",
         "programmingLanguage": "Java",
@@ -48,7 +49,7 @@
         "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
         "downloadUrl": "https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core",
         "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
-        "description": "Java SDK for the Open Data Contract Standard (ODCS). Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.",
+        "description": "ODCS Java SDK is a Java library for the Open Data Contract Standard (ODCS). Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.",
         "author": {
           "@type": "Organization",
           "name": "Data Spec Labs",
@@ -64,8 +65,8 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "odcs-java-sdk",
-        "alternateName": "odcs-core",
-        "description": "Java SDK to parse, write, validate, and build Open Data Contract Standard (ODCS) contracts.",
+        "alternateName": ["odcs-core", "ODCS Java library", "ODCS Java Library"],
+        "description": "ODCS Java SDK — a Java library to parse, write, validate, and build Open Data Contract Standard (ODCS) contracts.",
         "programmingLanguage": "Java",
         "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
         "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
@@ -130,6 +131,15 @@
     }
 
     a:hover { color: var(--navy-soft); }
+
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible,
+    .copy-btn:focus-visible,
+    .nav-link:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
 
     .wrap {
       width: min(100% - 2.5rem, 40rem);
@@ -230,7 +240,7 @@
       padding: 0.65rem 1.1rem;
       font-family: var(--font);
       font-size: 0.9375rem;
-      font-weight: 550;
+      font-weight: 500;
       text-decoration: none;
       border: 1px solid var(--navy);
       border-radius: var(--radius);
@@ -275,7 +285,7 @@
     h2 {
       margin: 0 0 0.75rem;
       font-size: 1.25rem;
-      font-weight: 650;
+      font-weight: 600;
       letter-spacing: -0.02em;
     }
 
@@ -376,6 +386,18 @@
     .copy-btn:hover {
       color: #fff;
       border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .code-panel pre {
@@ -483,14 +505,14 @@
         <h1 id="sdk-title">ODCS Java SDK</h1>
         <p class="artifact">odcs-core · v0.1.0 · Java 17+</p>
         <p class="hero-lead">
-          Java SDK for the
+          ODCS Java SDK is a Java library for the
           <a href="https://bitol-io.github.io/open-data-contract-standard/" target="_blank" rel="noopener noreferrer">Open Data Contract Standard (ODCS)</a>
           — machine-readable agreements between data producers and consumers.
           Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-          <a class="btn btn-ghost" href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven Central</a>
+          <a class="btn btn-ghost" href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven</a>
         </div>
       </section>
 
@@ -546,7 +568,8 @@
         <div class="code-panel">
           <div class="code-panel-bar">
             <span>Maven · pom.xml</span>
-            <button type="button" class="copy-btn" id="copy-maven" onclick="copyMaven()">Copy</button>
+            <button type="button" class="copy-btn" id="copy-maven" aria-label="Copy Maven dependency XML">Copy</button>
+            <span id="copy-maven-status" class="visually-hidden" aria-live="polite"></span>
           </div>
           <pre><code>&lt;dependency&gt;
   &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
@@ -558,7 +581,8 @@
         <div class="code-panel">
           <div class="code-panel-bar">
             <span>Gradle · Kotlin DSL</span>
-            <button type="button" class="copy-btn" id="copy-gradle" onclick="copyGradle()">Copy</button>
+            <button type="button" class="copy-btn" id="copy-gradle" aria-label="Copy Gradle dependency">Copy</button>
+            <span id="copy-gradle-status" class="visually-hidden" aria-live="polite"></span>
           </div>
           <pre><code>implementation("io.github.data-spec-labs:odcs-core:0.1.0")</code></pre>
         </div>
@@ -614,30 +638,42 @@
   </footer>
 
   <script>
-    function copyText(text, btnId) {
-      const btn = document.getElementById(btnId);
-      navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = 'Copied';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-      }).catch(() => {
-        btn.textContent = 'Failed';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-      });
-    }
+    (function () {
+      function bindCopy(btnId, statusId, text) {
+        const btn = document.getElementById(btnId);
+        const status = document.getElementById(statusId);
+        if (!btn) return;
 
-    function copyMaven() {
-      copyText(
-        `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`,
-        'copy-maven'
-      );
-    }
+        btn.addEventListener('click', function () {
+          navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'Copied';
+            if (status) status.textContent = 'Copied to clipboard';
+            setTimeout(() => {
+              btn.textContent = 'Copy';
+              if (status) status.textContent = '';
+            }, 2000);
+          }).catch(() => {
+            btn.textContent = 'Failed';
+            if (status) status.textContent = 'Copy failed';
+            setTimeout(() => {
+              btn.textContent = 'Copy';
+              if (status) status.textContent = '';
+            }, 2000);
+          });
+        });
+      }
 
-    function copyGradle() {
-      copyText(
-        'implementation("io.github.data-spec-labs:odcs-core:0.1.0")',
-        'copy-gradle'
+      bindCopy(
+        'copy-maven',
+        'copy-maven-status',
+        `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`
       );
-    }
+      bindCopy(
+        'copy-gradle',
+        'copy-gradle-status',
+        'implementation("io.github.data-spec-labs:odcs-core:0.1.0")'
+      );
+    })();
   </script>
 </body>
 </html>
