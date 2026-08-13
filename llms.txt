@@ -5,9 +5,14 @@
 ## Products
 
 - [ODCS Java SDK](https://data-spec-labs.github.io/odcs-java-sdk/): Java library to parse, write, validate, and build ODCS contracts
+- [What it is](https://data-spec-labs.github.io/odcs-java-sdk/#what-it-is): Summary, Maven coordinates, Apache 2.0 license
+- [Installation](https://data-spec-labs.github.io/odcs-java-sdk/#install-heading): Maven and Gradle for odcs-core 0.1.1
+- [How to use](https://data-spec-labs.github.io/odcs-java-sdk/#how-to-use): Parse, write, validate, and fluent builder examples
+- [FAQ](https://data-spec-labs.github.io/odcs-java-sdk/#faq): What it is, install, ODCS versions, parse vs validate
 - [Home](https://data-spec-labs.github.io/): Data Spec Labs overview and validators
 
 ## External
 
 - [GitHub: odcs-java-sdk](https://github.com/data-spec-labs/odcs-java-sdk)
 - [Maven: odcs-core](https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core)
+- [ODCS v3.1.0 standard](https://bitol-io.github.io/open-data-contract-standard/v3.1.0/)

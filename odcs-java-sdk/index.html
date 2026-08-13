@@ -7,7 +7,7 @@
   <title>ODCS Java SDK — Java Library for Open Data Contracts | Data Spec Labs</title>
   <meta name="title" content="ODCS Java SDK — Java Library for Open Data Contracts | Data Spec Labs">
   <meta name="description" content="ODCS Java SDK (odcs-core) is a Java library for the Open Data Contract Standard. Parse, write, validate, and build ODCS contracts (YAML/JSON) with ODCSParser, ODCSWriter, ODCSSpecValidator, and DataContractBuilder.">
-  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, ODCS Java library, ODCS Java Library, Open Data Contract Standard, ODCS, ODCSParser, ODCSWriter, ODCSSpecValidator, DataContractBuilder, Java 17, Maven, data contracts, Data Spec Labs">
+  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, ODCS Java library, Open Data Contract Standard, ODCS, ODCSParser, ODCSWriter, ODCSSpecValidator, DataContractBuilder, Java 17, Maven, data contracts, Data Spec Labs">
   <meta name="author" content="Data Spec Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://data-spec-labs.github.io/odcs-java-sdk/">
@@ -45,7 +45,9 @@
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Cross-platform",
         "programmingLanguage": "Java",
-        "softwareVersion": "0.1.0",
+        "softwareVersion": "0.1.1",
+        "dateModified": "2026-08-13",
+        "license": "https://opensource.org/licenses/Apache-2.0",
         "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
         "downloadUrl": "https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core",
         "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
@@ -70,7 +72,9 @@
         "programmingLanguage": "Java",
         "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
         "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
-        "version": "0.1.0"
+        "version": "0.1.1",
+        "dateModified": "2026-08-13",
+        "license": "https://opensource.org/licenses/Apache-2.0"
       },
       {
         "@type": "BreadcrumbList",
@@ -86,6 +90,43 @@
             "position": 2,
             "name": "ODCS Java SDK",
             "item": "https://data-spec-labs.github.io/odcs-java-sdk/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the ODCS Java SDK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ODCS Java SDK (Maven artifact odcs-core) is a Java 17+ library from Data Spec Labs for the Open Data Contract Standard (ODCS). It parses, writes, validates, and programmatically builds ODCS contracts in YAML or JSON on the JVM."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install odcs-core?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Add the Maven dependency io.github.data-spec-labs:odcs-core:0.1.1, or in Gradle: implementation(\"io.github.data-spec-labs:odcs-core:0.1.1\"). Requires Java 17+."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which ODCS versions does the SDK support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typed parse, write, and builder support ODCS v3.x (apiVersion starting with v3.), covering v3.0.0–v3.1.0. JSON Schema validation supports v3.1.0, v3.0.x, and legacy v2.2.x (schema-only). New contracts default to apiVersion v3.1.0."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between parsing and validating an ODCS contract?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ODCSParser maps YAML or JSON into typed Java DataContract models. ODCSSpecValidator checks the raw document against official Bitol JSON Schemas and returns a SpecValidationReport, including unknown fields and strict v3.1.0 rules."
+            }
           }
         ]
       }
@@ -152,7 +193,7 @@
     }
 
     .wrap {
-      width: min(100% - 2.5rem, 40rem);
+      width: min(100% - 2.5rem, 48rem);
       margin-inline: auto;
     }
 
@@ -291,6 +332,8 @@
     section:nth-of-type(3) { animation-delay: 0.24s; }
     section:nth-of-type(4) { animation-delay: 0.3s; }
     section:nth-of-type(5) { animation-delay: 0.36s; }
+    section:nth-of-type(6) { animation-delay: 0.4s; }
+    section:nth-of-type(7) { animation-delay: 0.44s; }
 
     h2 {
       margin: 0 0 0.75rem;
@@ -298,6 +341,16 @@
       font-weight: 600;
       letter-spacing: -0.02em;
     }
+
+    h3 {
+      margin: 1.75rem 0 0.65rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+    }
+
+    h3:first-child { margin-top: 0; }
 
     .section-copy {
       margin: 0 0 1.25rem;
@@ -307,6 +360,49 @@
     .mono {
       font-family: var(--mono);
       font-size: 0.875em;
+    }
+
+    .doc-table-wrap {
+      overflow-x: auto;
+      margin: 0 0 1.25rem;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .doc-table th,
+    .doc-table td {
+      padding: 0.65rem 0.5rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc-table th {
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .doc-table td {
+      color: var(--muted);
+    }
+
+    .doc-table code,
+    .doc-table .mono {
+      font-family: var(--mono);
+      font-size: 0.8125em;
+      color: var(--navy);
+    }
+
+    .doc-table tr:last-child th,
+    .doc-table tr:last-child td {
+      border-bottom: none;
     }
 
     .feature-list {
@@ -444,6 +540,31 @@
       font-size: 0.9375rem;
     }
 
+    .faq-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-list h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    .faq-list p {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
     .site-footer {
       border-top: 1px solid var(--line);
       padding: 1.75rem 0 2.5rem;
@@ -513,16 +634,202 @@
       <section class="hero" aria-labelledby="sdk-title">
         <p class="crumb"><a href="../">Home</a> / ODCS Java SDK</p>
         <h1 id="sdk-title">ODCS Java SDK</h1>
-        <p class="artifact">odcs-core · v0.1.0 · Java 17+</p>
+        <p class="artifact">odcs-core · v0.1.1 · Java 17+</p>
         <p class="hero-lead">
           ODCS Java SDK is a Java library for the
           <a href="https://bitol-io.github.io/open-data-contract-standard/" target="_blank" rel="noopener noreferrer">Open Data Contract Standard (ODCS)</a>
           — machine-readable agreements between data producers and consumers.
           Parse, write, validate, and programmatically build ODCS contracts (YAML or JSON) on the JVM.
         </p>
+        <p class="section-copy" id="what-it-is">
+          Published by <strong>Data Spec Labs</strong> as Maven artifact
+          <span class="mono">io.github.data-spec-labs:odcs-core:0.1.1</span>
+          (Java 17+). Licensed under
+          <a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener noreferrer">Apache 2.0</a>.
+          Use <span class="mono">ODCSParser</span>, <span class="mono">ODCSWriter</span>,
+          <span class="mono">ODCSSpecValidator</span>, and <span class="mono">DataContractBuilder</span>
+          in backend pipelines and services.
+        </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           <a class="btn btn-ghost" href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="install-heading">
+        <h2 id="install-heading">Installation</h2>
+        <p class="section-copy">
+          Published as <span class="mono">io.github.data-spec-labs:odcs-core</span>
+          (project: <strong>odcs-java-sdk</strong>). Requires Java 17+.
+        </p>
+        <p class="version">Current version: 0.1.1</p>
+
+        <h3>Maven</h3>
+        <div class="code-panel">
+          <div class="code-panel-bar">
+            <span>pom.xml</span>
+            <button type="button" class="copy-btn" id="copy-maven" aria-label="Copy Maven dependency XML">Copy</button>
+            <span id="copy-maven-status" class="visually-hidden" aria-live="polite"></span>
+          </div>
+          <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
+  &lt;artifactId&gt;odcs-core&lt;/artifactId&gt;
+  &lt;version&gt;0.1.1&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+        </div>
+
+        <h3>Gradle</h3>
+        <div class="code-panel">
+          <div class="code-panel-bar">
+            <span>Kotlin DSL</span>
+            <button type="button" class="copy-btn" id="copy-gradle" aria-label="Copy Gradle dependency">Copy</button>
+            <span id="copy-gradle-status" class="visually-hidden" aria-live="polite"></span>
+          </div>
+          <pre><code>implementation("io.github.data-spec-labs:odcs-core:0.1.1")</code></pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="howto-heading" id="how-to-use">
+        <h2 id="howto-heading">How to use</h2>
+        <p class="section-copy">
+          Quick start for parse, write, validate, and fluent build — from the
+          <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">odcs-java-sdk</a> README.
+        </p>
+
+        <h3>1. Parse a contract</h3>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>import io.github.dataspeclabs.odcs.core.ODCSParser;
+import io.github.dataspeclabs.odcs.core.model.v3.DataContract;
+
+DataContract contract = ODCSParser.parse("""
+    apiVersion: v3.1.0
+    kind: DataContract
+    id: 53581432-6c55-4ba2-a65f-72344a91553a
+    version: 1.0.0
+    status: active
+    name: seller_payments_v1
+    """);
+
+System.out.println(contract.id());       // 53581432-...
+System.out.println(contract.apiVersion()); // v3.1.0</code></pre>
+        </div>
+        <p class="section-copy">Also supported:</p>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>ODCSParser.parse(path);                          // .yaml / .yml / .json by extension
+ODCSParser.parse(inputStream, OdcsFormat.YAML);  // format required for streams
+ODCSParser.parse(content, OdcsFormat.JSON);      // explicit format</code></pre>
+        </div>
+
+        <h3>2. Write a contract</h3>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>import io.github.dataspeclabs.odcs.core.ODCSWriter;
+import io.github.dataspeclabs.odcs.core.OdcsFormat;
+
+String yaml = ODCSWriter.toYaml(contract);
+String json = ODCSWriter.toJson(contract);  // pretty-printed
+
+ODCSWriter.write(contract, Path.of("payments.odcs.yaml"), OdcsFormat.YAML);</code></pre>
+        </div>
+
+        <h3>3. Validate against Bitol JSON Schema</h3>
+        <p class="section-copy">
+          Validates the <strong>raw document</strong> (not the typed model), so unknown fields and strict v3.1.0 rules are checked correctly.
+        </p>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>import io.github.dataspeclabs.odcs.core.ODCSSpecValidator;
+import io.github.dataspeclabs.odcs.core.SpecValidationReport;
+
+SpecValidationReport report = ODCSSpecValidator.validate(yaml);
+
+if (!report.valid()) {
+    report.errors().forEach(err -&gt;
+        System.out.println(err.path() + ": " + err.message() + " [" + err.keyword() + "]"));
+}
+
+System.out.println(report.resolvedVersion()); // e.g. v3.1.0
+// report.versionWarning() is set when apiVersion was missing/unknown
+// and a fallback schema was used</code></pre>
+        </div>
+        <p class="section-copy">Bundled schemas (resolved from <span class="mono">apiVersion</span>):</p>
+        <div class="doc-table-wrap">
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th><span class="mono">apiVersion</span></th>
+                <th>Schema</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="mono">v3.1.0</span></td>
+                <td>v3.1.0 (strict)</td>
+              </tr>
+              <tr>
+                <td><span class="mono">v3.0.2</span>, <span class="mono">v3.0.1</span></td>
+                <td>v3.0.2</td>
+              </tr>
+              <tr>
+                <td><span class="mono">v3.0.0</span></td>
+                <td>v3.0.0</td>
+              </tr>
+              <tr>
+                <td><span class="mono">v2.2.2</span>, <span class="mono">v2.2.1</span>, <span class="mono">v2.2.0</span></td>
+                <td>v2.2.2</td>
+              </tr>
+              <tr>
+                <td>missing / unknown</td>
+                <td>falls back to <strong>v3.1.0</strong> + warning</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>4. Build a contract in code (Fluent API)</h3>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>import io.github.dataspeclabs.odcs.core.builder.DataContractBuilder;
+import io.github.dataspeclabs.odcs.core.model.v3.LogicalType;
+import io.github.dataspeclabs.odcs.core.model.v3.ServerType;
+
+DataContract contract = DataContractBuilder.create()
+    .id("53581432-6c55-4ba2-a65f-72344a91553a")
+    .version("1.0.0")
+    .status("active")
+    .name("seller_payments_v1")
+    .domain("seller")
+    .schemaObject(obj -&gt; obj
+        .name("payments")
+        .physicalType("table")
+        .property(p -&gt; p
+            .name("payment_id")
+            .logicalType(LogicalType.STRING)
+            .primaryKey(true)
+            .required(true)))
+    .server(s -&gt; s
+        .server("my-postgres")
+        .type(ServerType.POSTGRES)
+        .property("host", "localhost")
+        .property("port", 5432))
+    .team(t -&gt; t
+        .name("payments-team")
+        .member(m -&gt; m.username("alice").role("Owner")))
+    .build();</code></pre>
+        </div>
+        <p class="section-copy">
+          Defaults on <span class="mono">create()</span>: <span class="mono">apiVersion = "v3.1.0"</span>, <span class="mono">kind = "DataContract"</span>.
+          <span class="mono">build()</span> requires non-blank <span class="mono">apiVersion</span>, <span class="mono">kind</span>, <span class="mono">id</span>, <span class="mono">version</span>, and <span class="mono">status</span>.
+          For full Bitol schema checks, pass the written YAML/JSON through <span class="mono">ODCSSpecValidator</span>.
+        </p>
+        <p class="section-copy">Edit an existing contract:</p>
+        <div class="code-panel">
+          <div class="code-panel-bar"><span>Java</span></div>
+          <pre><code>DataContract updated = DataContractBuilder.from(contract)
+    .status("deprecated")
+    .build();</code></pre>
         </div>
       </section>
 
@@ -567,37 +874,6 @@
         </ul>
       </section>
 
-      <section aria-labelledby="install-heading">
-        <h2 id="install-heading">Installation</h2>
-        <p class="section-copy">
-          Published as <span class="mono">io.github.data-spec-labs:odcs-core</span>
-          (project: <strong>odcs-java-sdk</strong>). Requires Java 17+.
-        </p>
-        <p class="version">Current version: 0.1.0</p>
-
-        <div class="code-panel">
-          <div class="code-panel-bar">
-            <span>Maven · pom.xml</span>
-            <button type="button" class="copy-btn" id="copy-maven" aria-label="Copy Maven dependency XML">Copy</button>
-            <span id="copy-maven-status" class="visually-hidden" aria-live="polite"></span>
-          </div>
-          <pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
-  &lt;artifactId&gt;odcs-core&lt;/artifactId&gt;
-  &lt;version&gt;0.1.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-        </div>
-
-        <div class="code-panel">
-          <div class="code-panel-bar">
-            <span>Gradle · Kotlin DSL</span>
-            <button type="button" class="copy-btn" id="copy-gradle" aria-label="Copy Gradle dependency">Copy</button>
-            <span id="copy-gradle-status" class="visually-hidden" aria-live="polite"></span>
-          </div>
-          <pre><code>implementation("io.github.data-spec-labs:odcs-core:0.1.0")</code></pre>
-        </div>
-      </section>
-
       <section aria-labelledby="versions-heading">
         <h2 id="versions-heading">ODCS version support</h2>
         <ul class="support-list">
@@ -615,11 +891,53 @@
           </li>
         </ul>
         <p class="section-copy" style="margin-top: 1.25rem;">
+          <span class="mono">ODCSParser</span> rejects missing or non-v3 <span class="mono">apiVersion</span>.
+          Spec validation can still check v2 documents against the bundled v2 JSON Schema without mapping them to Java domain types.
+        </p>
+        <p class="section-copy">
           Official standard:
           <a href="https://bitol-io.github.io/open-data-contract-standard/v3.1.0/" target="_blank" rel="noopener noreferrer">ODCS v3.1.0</a>.
-          Full docs and examples:
-          <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub README</a>.
         </p>
+      </section>
+
+      <section aria-labelledby="faq-heading" id="faq">
+        <h2 id="faq-heading">FAQ</h2>
+        <ul class="faq-list">
+          <li>
+            <h3>What is the ODCS Java SDK?</h3>
+            <p>
+              ODCS Java SDK (Maven artifact <span class="mono">odcs-core</span>) is a Java 17+ library from Data Spec Labs
+              for the Open Data Contract Standard. It lets you parse, write, validate, and programmatically build
+              ODCS contracts in YAML or JSON on the JVM.
+            </p>
+          </li>
+          <li>
+            <h3>How do I install odcs-core?</h3>
+            <p>
+              Add <span class="mono">io.github.data-spec-labs:odcs-core:0.1.1</span> via Maven or
+              <span class="mono">implementation("io.github.data-spec-labs:odcs-core:0.1.1")</span> in Gradle.
+              See <a href="#install-heading">Installation</a>.
+            </p>
+          </li>
+          <li>
+            <h3>Which ODCS versions does the SDK support?</h3>
+            <p>
+              Typed parse, write, and builder cover ODCS <strong>v3.x</strong> (v3.0.0–v3.1.0).
+              JSON Schema validation also covers legacy <strong>v2.2.x</strong> (schema-only).
+              New contracts default to <span class="mono">apiVersion: v3.1.0</span>.
+              Details under <a href="#versions-heading">ODCS version support</a>.
+            </p>
+          </li>
+          <li>
+            <h3>What is the difference between parsing and validating?</h3>
+            <p>
+              <span class="mono">ODCSParser</span> turns YAML/JSON into typed <span class="mono">DataContract</span> models.
+              <span class="mono">ODCSSpecValidator</span> checks the <strong>raw document</strong> against official Bitol JSON Schemas
+              and returns a <span class="mono">SpecValidationReport</span> (unknown fields, strict v3.1.0 rules, and more).
+              See <a href="#how-to-use">How to use</a>.
+            </p>
+          </li>
+        </ul>
       </section>
 
       <section aria-labelledby="more-heading">
@@ -629,6 +947,8 @@
           <a href="https://odcs-validator.com/" target="_blank" rel="noopener noreferrer">ODCS Validator</a>
           web tool, or see all projects on
           <a href="../">Data Spec Labs</a>.
+          Source and full README:
+          <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </section>
     </div>
@@ -676,12 +996,12 @@
       bindCopy(
         'copy-maven',
         'copy-maven-status',
-        `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`
+        `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.1</version>\n</dependency>`
       );
       bindCopy(
         'copy-gradle',
         'copy-gradle-status',
-        'implementation("io.github.data-spec-labs:odcs-core:0.1.0")'
+        'implementation("io.github.data-spec-labs:odcs-core:0.1.1")'
       );
     })();
   </script>

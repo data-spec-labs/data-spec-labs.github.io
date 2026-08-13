@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ODCS Java SDK — Java Library | Data Spec Labs</title>
-  <meta name="title" content="ODCS Java SDK — Java Library | Data Spec Labs">
-  <meta name="description" content="ODCS Java SDK (odcs-java-sdk / odcs-core) is a Java library to parse, write, validate, and build Open Data Contract Standard (ODCS) contracts in YAML or JSON. Also: ODCS and ODPS online validators.">
-  <meta name="keywords" content="odcs-java-sdk, odcs-core, ODCS Java SDK, ODCS Java library, ODCS Java Library, Open Data Contract Standard, ODCS, Java SDK, Maven, data contracts, ODCSParser, Data Spec Labs, ODCS validator, ODPS validator">
+  <title>Data Spec Labs | ODCS &amp; ODPS tooling</title>
+  <meta name="title" content="Data Spec Labs | ODCS & ODPS tooling">
+  <meta name="description" content="Data Spec Labs builds open-source tools for Open Data Specifications — featuring the ODCS Java SDK (odcs-core), plus ODCS and ODPS online validators.">
+  <meta name="keywords" content="Data Spec Labs, ODCS, ODPS, Open Data Contract Standard, Open Data Product Specification, odcs-java-sdk, odcs-core, data contracts, validators">
   <meta name="author" content="Data Spec Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://data-spec-labs.github.io/">
@@ -20,14 +20,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://data-spec-labs.github.io/">
-  <meta property="og:title" content="ODCS Java SDK — Java Library | Data Spec Labs">
-  <meta property="og:description" content="ODCS Java SDK is a Java library to parse, write, validate, and build ODCS data contracts on the JVM. Install odcs-core from Maven.">
+  <meta property="og:title" content="Data Spec Labs | ODCS & ODPS tooling">
+  <meta property="og:description" content="Open-source tooling for Open Data Specifications — ODCS Java SDK and online validators for ODCS and ODPS.">
   <meta property="og:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="https://data-spec-labs.github.io/">
-  <meta name="twitter:title" content="ODCS Java SDK — Java Library | Data Spec Labs">
-  <meta name="twitter:description" content="ODCS Java SDK is a Java library to parse, write, validate, and build ODCS data contracts on the JVM. Install odcs-core from Maven.">
+  <meta name="twitter:title" content="Data Spec Labs | ODCS & ODPS tooling">
+  <meta name="twitter:description" content="Open-source tooling for Open Data Specifications — ODCS Java SDK and online validators for ODCS and ODPS.">
   <meta name="twitter:image" content="https://data-spec-labs.github.io/logo/dsl_logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Cross-platform",
         "programmingLanguage": "Java",
-        "softwareVersion": "0.1.0",
+        "softwareVersion": "0.1.1",
         "url": "https://data-spec-labs.github.io/odcs-java-sdk/",
         "downloadUrl": "https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core",
         "codeRepository": "https://github.com/data-spec-labs/odcs-java-sdk",
@@ -549,7 +549,7 @@
           <li><strong>Build</strong> — fluent <code style="font-family:var(--mono);font-size:0.85em">DataContractBuilder</code> API</li>
         </ul>
         <div class="meta-row">
-          <span class="version">v0.1.0 · Java 17+</span>
+          <span class="version">v0.1.1 · Java 17+</span>
           <a href="https://mvnrepository.com/artifact/io.github.data-spec-labs/odcs-core" target="_blank" rel="noopener noreferrer">Maven</a>
           <a href="https://github.com/data-spec-labs/odcs-java-sdk" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="odcs-java-sdk/">Details</a>
@@ -564,7 +564,7 @@
           <pre><code id="maven-dep">&lt;dependency&gt;
   &lt;groupId&gt;io.github.data-spec-labs&lt;/groupId&gt;
   &lt;artifactId&gt;odcs-core&lt;/artifactId&gt;
-  &lt;version&gt;0.1.0&lt;/version&gt;
+  &lt;version&gt;0.1.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
         </div>
       </section>
@@ -620,7 +620,7 @@
       const status = document.getElementById('copy-status');
       if (!btn) return;
 
-      const xml = `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.0</version>\n</dependency>`;
+      const xml = `<dependency>\n  <groupId>io.github.data-spec-labs</groupId>\n  <artifactId>odcs-core</artifactId>\n  <version>0.1.1</version>\n</dependency>`;
 
       btn.addEventListener('click', function () {
         navigator.clipboard.writeText(xml).then(() => {
