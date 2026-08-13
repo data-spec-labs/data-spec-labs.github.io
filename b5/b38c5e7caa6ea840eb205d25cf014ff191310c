@@ -1,0 +1,14 @@
+.github/workflows/indexnow.yml
+  h_0906978b809012 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b5b38c5e7caa6ea840eb205d25cf014ff191310c",
+  "prompts": {},
+  "humans": {
+    "h_0906978b809012": {
+      "author": "Rajat Goel <rajatgl17@gmail.com>"
+    }
+  }
+}
