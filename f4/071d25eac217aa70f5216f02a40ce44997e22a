@@ -1,0 +1,14 @@
+d75f3619a4b94cc085dece77aaacf63a.txt
+  h_0906978b809012 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "f4071d25eac217aa70f5216f02a40ce44997e22a",
+  "prompts": {},
+  "humans": {
+    "h_0906978b809012": {
+      "author": "Rajat Goel <rajatgl17@gmail.com>"
+    }
+  }
+}
