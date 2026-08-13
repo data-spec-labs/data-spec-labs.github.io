@@ -1,0 +1,16 @@
+index.html
+  h_0906978b809012 9,24,30,79,529,543,546-549
+odcs-java-sdk/index.html
+  h_0906978b809012 7-8,23,29,71,641,695,882
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d705e3c9688529fc503be821ce0d479fa7d4755f",
+  "prompts": {},
+  "humans": {
+    "h_0906978b809012": {
+      "author": "Rajat Goel <rajatgl17@gmail.com>"
+    }
+  }
+}
