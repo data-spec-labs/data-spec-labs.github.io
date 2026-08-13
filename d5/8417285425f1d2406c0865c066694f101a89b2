@@ -1,0 +1,43 @@
+sitemap.xml
+  s_fc32d90c6ff0bf::t_a40d1c9f580126 11
+llms.txt
+  s_fc32d90c6ff0bf::t_39d03d3dd244c4 8-11,18
+odcs-java-sdk/index.html
+  s_fc32d90c6ff0bf::t_2c71766c6ec572 406,543-567
+  s_fc32d90c6ff0bf::t_0ae6fe18796d88 196
+  s_fc32d90c6ff0bf::t_442e9456dd1897 49-50,75-77,95-129
+  s_fc32d90c6ff0bf::t_a139107974c4b5 644-652
+  s_fc32d90c6ff0bf::t_667b22c14d2132 10
+  s_fc32d90c6ff0bf::t_e34ad0032fb23e 661,664,667-670,679,681-684,689-835,896-897,950-951
+  s_fc32d90c6ff0bf::t_6cb3b50ddaa039 48,637,665,677,688,999,1004
+  s_fc32d90c6ff0bf::t_85cbb37142bfa2 663,685,894-895
+  s_fc32d90c6ff0bf::t_05e1a3650b3030 903-942
+  s_fc32d90c6ff0bf::t_10cf653d959839 335-336,345-354,365-405
+  s_fc32d90c6ff0bf::t_109bd40ce8e7b0 130-131
+  s_fc32d90c6ff0bf::t_470f82c74a5af3 407
+  s_fc32d90c6ff0bf::t_2b8422a47b9a44 659-660
+  s_fc32d90c6ff0bf::t_c526b912730c8e 662
+  s_fc32d90c6ff0bf::t_70299058da02c1 666
+  s_fc32d90c6ff0bf::t_19cb12843379bb 671-676
+  s_fc32d90c6ff0bf::t_cb2d1a1f04fe87 678
+  s_fc32d90c6ff0bf::t_8a5ffb29cc3e71 680
+  s_fc32d90c6ff0bf::t_3840c3fa783021 686-687
+index.html
+  s_fc32d90c6ff0bf::t_6d0af0e47f6844 7-10,23-24,29-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d58417285425f1d2406c0865c066694f101a89b2",
+  "prompts": {},
+  "sessions": {
+    "s_fc32d90c6ff0bf": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "eeee3214-c59e-4b7e-b427-f473af3f149d",
+        "model": "auto-smart"
+      },
+      "human_author": "Rajat Goel <rajatgl17@gmail.com>"
+    }
+  }
+}
