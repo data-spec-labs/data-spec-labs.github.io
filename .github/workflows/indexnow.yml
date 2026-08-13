@@ -1,0 +1,17 @@
+name: Submit Sitemap URLs to IndexNow
+
+on:
+  schedule:
+    - cron: 0 0 1 * *  # Run at midnight UTC on the 1st day of each month.
+
+jobs:
+  submit-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        uses: jakob-bagterp/index-now-submit-sitemap-urls-action@v1
+        with:
+          host: data-spec-labs.github.io
+          api_key: d75f3619a4b94cc085dece77aaacf63a
+          api_key_location: https://data-spec-labs.github.io/d75f3619a4b94cc085dece77aaacf63a.txt
+          sitemap_locations: https://data-spec-labs.github.io/sitemap.xml
